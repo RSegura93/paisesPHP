@@ -68,9 +68,16 @@
 				var self = $(this);
 				var id = self.attr("code");
 				var pais = paises.find((o) => { return o.id === id });
+				var checked = formEditar.find("input[name='checked']");
 				formAgregar.addClass("hidden");
 				formEditar.find("input[name='name']").val(pais.name);
-				formEditar.find("input[name='cheked']").val(pais.checked);
+				checked.prop('checked', pais.checked == '1' );
+				// checked.removeAttr('checked');
+				// console.log(checked)
+				// console.log(pais.checked );
+				// console.log(pais.checked == '1' );
+
+				// formEditar.find("input[name='cheked']").checked(false);
 				formEditar.removeClass("hidden");
 				formEditar.attr("idModifying",id);
 			});
@@ -219,9 +226,9 @@
 	<div style="font-size: 14pt; font-family: Arial;">
 		Los archivos se encuentran en:
 		<ol>
-			<li><a href="<?php echo $this->config->base_url()."assets/view.php";?>">View o Vista</a></li>
-			<li><a href="<?php echo $this->config->base_url()."assets/view.php";?>">Controller o Controlador</a></li>
-			<li><a href="<?php echo $this->config->base_url()."assets/view.php";?>">Model o Modelo</a></li>
+			<li><a href="https://github.com/RSegura93/paisesPHP/blob/master/assets/view.php">View o Vista</a></li>
+			<li><a href="https://github.com/RSegura93/paisesPHP/blob/master/assets/controller.php">Controller o Controlador</a></li>
+			<li><a href="https://github.com/RSegura93/paisesPHP/blob/master/assets/model.php">Model o Modelo</a></li>
 		</ol>
 	</div>
 	<div id="container">
